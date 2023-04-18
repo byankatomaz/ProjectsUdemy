@@ -53,9 +53,13 @@ Caso contrario:
     resultado é o propio resultado
 
 O segundo digito do CPF é 0
+
+
 """
 
 import re
+import sys
+import random
 
 
 def Validador():
@@ -66,6 +70,12 @@ def Validador():
         '',
         cpf
     )
+
+    entrada_sequencial = cpf == cpf[0] * len(cpf)
+
+    if entrada_sequencial:
+        print('Você mandou dados sequenciais')
+        sys.exit()
 
     numcpfs = cpf[:9]
     contador_regressivo1 = 10
@@ -83,15 +93,15 @@ def Validador():
     else:
         digito1 = 0
 
-    numcpfs2 = cpf[:10]
+    numcpfs2 = numcpfs + str(digito1)
     contador_regressivo2 = 11
-    resultado = 0
+    resultado2 = 0
 
     for digito in numcpfs2:
-        resultado += (int(digito) * contador_regressivo2)
+        resultado2 += (int(digito) * contador_regressivo2)
         contador_regressivo2 -= 1
 
-    digito2 = (resultado * 10) % 11
+    digito2 = (resultado2 * 10) % 11
 
     if digito2 <= 9:
         digito2 = digito2
@@ -101,11 +111,57 @@ def Validador():
 
     novocpf = numcpfs + str(digito1) + str(digito2)
 
+    print(digito1, digito2)
+
     if novocpf == cpf:
         print(f'{cpf} o CPF é válido')
     else:
         print(f'{cpf} o CPF é inválido')
 
 
+def gerando_cpf():
+
+    numcpfs = ''
+
+    for i in range(9):
+        numcpfs += str(random.randint(0, 9))
+
+    contador_regressivo1 = 10
+    resultado = 0
+
+    for digito in numcpfs:
+        resultado += (int(digito) * contador_regressivo1)
+        contador_regressivo1 -= 1
+
+    digito1 = (resultado * 10) % 11
+
+    if digito1 <= 9:
+        digito1 = digito1
+
+    else:
+        digito1 = 0
+
+    numcpfs2 = numcpfs + str(digito1)
+    contador_regressivo2 = 11
+    resultado2 = 0
+
+    for digito in numcpfs2:
+        resultado2 += (int(digito) * contador_regressivo2)
+        contador_regressivo2 -= 1
+
+    digito2 = (resultado2 * 10) % 11
+
+    if digito2 <= 9:
+        digito2 = digito2
+
+    else:
+        digito2 = 0
+
+    novocpf = numcpfs + str(digito1) + str(digito2)
+
+    print(novocpf)
+
+
 if __name__ == "__main__":
+    gerando_cpf()
     Validador()
