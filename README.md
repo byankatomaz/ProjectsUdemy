@@ -1,2 +1,2 @@
 # ProjectsUdemy
-Projetos que são feitos no curso de Python na Udemy
+Projetos que são feitos no curso de Python e de Java na Udemy
