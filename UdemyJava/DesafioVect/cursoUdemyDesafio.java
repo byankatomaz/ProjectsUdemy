@@ -1,4 +1,4 @@
-package Udemy.DesafioVect;
+package DesafioVect;
 
 import java.util.Locale;
 import java.util.Scanner;

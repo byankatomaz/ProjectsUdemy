@@ -1,4 +1,4 @@
-package Udemy.ExerciciosFixacao5;
+package ExerciciosFixacao5;
 
 import java.util.ArrayList;
 import java.util.List;
