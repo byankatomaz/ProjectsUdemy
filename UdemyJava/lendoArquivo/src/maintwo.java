@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class maintwo {
     public static void main(String[] args) {
-        String path = "C:\\Users\\mob7ca\\Desktop\\ProjectsUdemy\\UdemyJava\\lendoArquivo\\teste.txt";
+        String path = "C:\\**\\**\\**\\ProjectsUdemy\\UdemyJava\\lendoArquivo\\teste.txt";
 
         FileReader fr = null;
         BufferedReader br = null;
