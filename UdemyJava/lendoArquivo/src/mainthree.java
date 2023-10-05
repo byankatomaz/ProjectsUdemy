@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class mainthree {
     public static void main(String[] args) {
-        String path = "C:\\Users\\mob7ca\\Desktop\\ProjectsUdemy\\UdemyJava\\lendoArquivo\\teste.txt";
+        String path = "C:\\**\\**\\**\\ProjectsUdemy\\UdemyJava\\lendoArquivo\\teste.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             String line = br.readLine();
